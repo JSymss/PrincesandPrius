@@ -4,19 +4,68 @@ using System.Collections;
 public class CarController: MonoBehaviour {
 
 
-     public float acceleration;
-public float steering;
-private Rigidbody2D rb;
+    public float acceleration;
+    public float steering;
+    private Rigidbody2D rb;
+    static public AudioSource carNoise;
+    bool playingNoise = false;
+    bool canStopNoise = false;
+    static bool keepFadingIn;
+    static bool keepFadingOut;
 
-void Start()
+    void Start()
 {
     rb = GetComponent<Rigidbody2D>();
+    carNoise = GetComponent<AudioSource>();
 }
 
-void FixedUpdate()
+    public static IEnumerator FadeIn()
+    {
+        Debug.Log("Fading In");
+        carNoise.Play();
+        carNoise.volume = 0;
+        float speed = 0.005f;
+
+        for (float i = 0; i <= 0.6f; i += speed)
+        {
+            carNoise.volume = i;
+            yield return null;
+        }
+    }
+    public static IEnumerator FadeOut()
+    {
+        Debug.Log("Fading Out");
+        carNoise.volume = 0.6f;
+        float speed = 0.005f;
+
+        for (float i = 0.6f; i >= 0; i -= speed)
+        {
+            carNoise.volume = i;
+            yield return null;
+        }
+        
+    }
+    void FixedUpdate()
 {
     float h = -Input.GetAxis("Horizontal");
     float v = Input.GetAxis("Vertical");
+    //Debug.Log(rb.velocity.magnitude);
+
+        if (playingNoise == false && rb.velocity.magnitude >= 2)
+        {
+            Debug.Log("Reached speed");
+            StartCoroutine(CarController.FadeIn());
+            playingNoise = true;
+            canStopNoise = true;
+        }
+
+        if (canStopNoise == true && rb.velocity.magnitude <=2)
+        {
+            StartCoroutine(CarController.FadeOut());
+            playingNoise = false;
+            canStopNoise = false;
+        }
+     
 
     Vector2 speed = transform.up * (v * acceleration);
     rb.AddForce(speed);

@@ -15,20 +15,62 @@ public class CarController: MonoBehaviour {
     public AudioSource backgroundMusic;
     public GameObject beginning_1;
     public GameObject beginning_2;
-    bool Beg_1 = false;
-    bool Beg_2 = false;
     public GameObject enchantedForest_1;
     public GameObject enchantedForest_2;
     public GameObject goblinCamp_1;
     public GameObject goblinCamp_2;
     public GameObject wastelandDeserts_1;
     public GameObject wastelandDeserts_2;
-    bool Enc_1 = false;
-    bool Enc_2 = false;
-    bool Gob_1 = false;
-    bool Gob_2 = false;
-    bool Was_1 = false;
-    bool Was_2 = false;
+    public GameObject pirateSeas_1;
+    public GameObject pirateSeas_2;
+    public GameObject pirateSeas_3;
+    public GameObject hauntedForest_1;
+    public GameObject hauntedForest_2;
+    public GameObject volcano_1;
+    public GameObject volcano_2;
+    public GameObject dragonsLair_1;
+    public GameObject dragonsLair_2;
+    public GameObject dragonsLair_3;
+    public GameObject vampireCastle_1;
+    public GameObject vampireCastle_2;
+    public GameObject vampireCastle_3;
+    public GameObject wizardTower_1;
+    public GameObject wizardTower_2;
+    public GameObject wizardTower_3;
+    public GameObject cave_1;
+    public GameObject cave_2;
+    public GameObject treasureMine_1;
+    public GameObject treasureMine_2;
+    public GameObject treasureMine_3;
+    bool beg_1 = false;
+    bool beg_2 = false;
+    bool enc_1 = false;
+    bool enc_2 = false;
+    bool gob_1 = false;
+    bool gob_2 = false;
+    bool was_1 = false;
+    bool was_2 = false;
+    bool pir_1 = false;
+    bool pir_2 = false;
+    bool pir_3 = false;
+    bool hau_1 = false;
+    bool hau_2 = false;
+    bool vol_1 = false;
+    bool vol_2 = false;
+    bool dra_1 = false;
+    bool dra_2 = false;
+    bool dra_3 = false;
+    bool vam_1 = false;
+    bool vam_2 = false;
+    bool vam_3 = false;
+    bool wiz_1 = false;
+    bool wiz_2 = false;
+    bool wiz_3 = false;
+    bool cav_1 = false;
+    bool cav_2 = false;
+    bool tre_1 = false;
+    bool tre_2 = false;
+    bool tre_3 = false;
 
 
     void Start()
@@ -145,75 +187,264 @@ public class CarController: MonoBehaviour {
         switch(trackName)
         {
             case "Beginning_1":
-                if (Beg_1 == false)
+                if (beg_1 == false)
                 {
                     Debug.Log("Entered Trigger");
                     beginning_1.GetComponent<AudioSource>().Play();
-                    Beg_1 = true;
+                    beg_1 = true;
                     StartCoroutine(DipVolume(beginning_1));
                 }
                 break;
             case "Beginning_2":
-                if (Beg_2 == false)
+                if (beg_2 == false)
                 {
                     Debug.Log("Entered Trigger");
                     beginning_2.GetComponent<AudioSource>().Play();
-                    Beg_2 = true;
+                    beg_2 = true;
                     StartCoroutine(DipVolume(beginning_2));
                 }
                 break;
             case "EnchantedForest_1":
-                if (Enc_1 == false)
+                if (enc_1 == false)
                 {
                     Debug.Log("Entered Trigger");
                     enchantedForest_1.GetComponent<AudioSource>().Play();
-                    Enc_1 = true;
+                    enc_1 = true;
                     StartCoroutine(DipVolume(enchantedForest_1));
                 }
                 break;
             case "EnchantedForest_2":
-                if (Enc_2 == false)
+                if (enc_2 == false)
                 {
                     Debug.Log("Entered Trigger");
                     enchantedForest_2.GetComponent<AudioSource>().Play();
-                    Enc_2 = true;
+                    enc_2 = true;
                     StartCoroutine(DipVolume(enchantedForest_2));
                 }
                 break;
             case "GoblinCamp_1":
-                if (Gob_1 == false)
+                if (gob_1 == false)
                 {
                     Debug.Log("Entered Trigger");
                     goblinCamp_1.GetComponent<AudioSource>().Play();
-                    Gob_1 = true;
+                    gob_1 = true;
                     StartCoroutine(DipVolume(goblinCamp_1));
                 }
                 break;
             case "GoblinCamp_2":
-                if (Gob_2 == false)
+                if (gob_2 == false)
                 {
                     Debug.Log("Entered Trigger");
                     goblinCamp_2.GetComponent<AudioSource>().Play();
-                    Gob_2 = true;
+                    gob_2 = true;
                     StartCoroutine(DipVolume(goblinCamp_2));
                 }
                 break;
             case "WastelandDeserts_1":
-                if (Was_1 == false)
+                if (was_1 == false)
                 {
                     Debug.Log("Entered Trigger");
                     wastelandDeserts_1.GetComponent<AudioSource>().Play();
-                    Was_1 = true;
+                    was_1 = true;
                     StartCoroutine(DipVolume(wastelandDeserts_1));
                 }
                 break;
             case "WastelandDeserts_2":
-                if (Was_2 == false)
+                if (was_2 == false)
                 {
                     Debug.Log("Entered Trigger");
                     wastelandDeserts_2.GetComponent<AudioSource>().Play();
-                    Was_2 = true;
+                    was_2 = true;
                     StartCoroutine(DipVolume(wastelandDeserts_2));
+                }
+                break;
+            case "PirateSeas_1":
+                if (pir_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    pirateSeas_1.GetComponent<AudioSource>().Play();
+                    pir_1 = true;
+                    StartCoroutine(DipVolume(pirateSeas_1));
+                }
+                break;
+            case "PirateSeas_2":
+                if (pir_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    pirateSeas_2.GetComponent<AudioSource>().Play();
+                    pir_2 = true;
+                    StartCoroutine(DipVolume(pirateSeas_2));
+                }
+                break;
+            case "PirateSeas_3":
+                if (pir_3 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    pirateSeas_3.GetComponent<AudioSource>().Play();
+                    pir_3 = true;
+                    StartCoroutine(DipVolume(pirateSeas_3));
+                }
+                break;
+            case "HauntedForest_1":
+                if (hau_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    hauntedForest_1.GetComponent<AudioSource>().Play();
+                    hau_1 = true;
+                    StartCoroutine(DipVolume(hauntedForest_1));
+                }
+                break;
+            case "HauntedForest_2":
+                if (hau_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    hauntedForest_2.GetComponent<AudioSource>().Play();
+                    hau_2 = true;
+                    StartCoroutine(DipVolume(hauntedForest_2));
+                }
+                break;
+            case "Volcano_1":
+                if (vol_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    volcano_1.GetComponent<AudioSource>().Play();
+                    vol_1 = true;
+                    StartCoroutine(DipVolume(volcano_1));
+                }
+                break;
+            case "Volcano_2":
+                if (vol_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    volcano_2.GetComponent<AudioSource>().Play();
+                    vol_2 = true;
+                    StartCoroutine(DipVolume(volcano_2));
+                }
+                break;
+            case "DragonsLair_1":
+                if (dra_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    dragonsLair_1.GetComponent<AudioSource>().Play();
+                    dra_1 = true;
+                    StartCoroutine(DipVolume(dragonsLair_1));
+                }
+                break;
+            case "DragonsLair_2":
+                if (dra_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    dragonsLair_2.GetComponent<AudioSource>().Play();
+                    dra_2 = true;
+                    StartCoroutine(DipVolume(dragonsLair_2));
+                }
+                break;
+            case "DragonsLair_3":
+                if (dra_3 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    dragonsLair_3.GetComponent<AudioSource>().Play();
+                    dra_3 = true;
+                    StartCoroutine(DipVolume(dragonsLair_3));
+                }
+                break;
+            case "VampireCastle_1":
+                if (vam_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    vampireCastle_1.GetComponent<AudioSource>().Play();
+                    vam_1 = true;
+                    StartCoroutine(DipVolume(vampireCastle_1));
+                }
+                break;
+            case "VampireCastle_2":
+                if (vam_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    vampireCastle_2.GetComponent<AudioSource>().Play();
+                    vam_2 = true;
+                    StartCoroutine(DipVolume(vampireCastle_2));
+                }
+                break;
+            case "VampireCastle_3":
+                if (vam_3 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    vampireCastle_3.GetComponent<AudioSource>().Play();
+                    vam_3 = true;
+                    StartCoroutine(DipVolume(vampireCastle_3));
+                }
+                break;
+            case "WizardTower_1":
+                if (wiz_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    wizardTower_1.GetComponent<AudioSource>().Play();
+                    wiz_1 = true;
+                    StartCoroutine(DipVolume(wizardTower_1));
+                }
+                break;
+            case "WizardTower_2":
+                if (wiz_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    wizardTower_2.GetComponent<AudioSource>().Play();
+                    wiz_2 = true;
+                    StartCoroutine(DipVolume(wizardTower_2));
+                }
+                break;
+            case "WizardTower_3":
+                if (wiz_3 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    wizardTower_3.GetComponent<AudioSource>().Play();
+                    wiz_3 = true;
+                    StartCoroutine(DipVolume(wizardTower_3));
+                }
+                break;
+            case "Cave_1":
+                if (cav_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    cave_1.GetComponent<AudioSource>().Play();
+                    cav_1 = true;
+                    StartCoroutine(DipVolume(cave_1));
+                }
+                break;
+            case "Cave_2":
+                if (cav_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    cave_2.GetComponent<AudioSource>().Play();
+                    cav_2 = true;
+                    StartCoroutine(DipVolume(cave_2));
+                }
+                break;
+            case "TreasureMine_1":
+                if (tre_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    treasureMine_1.GetComponent<AudioSource>().Play();
+                    tre_1 = true;
+                    StartCoroutine(DipVolume(treasureMine_1));
+                }
+                break;
+            case "TreasureMine_2":
+                if (tre_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    treasureMine_2.GetComponent<AudioSource>().Play();
+                    tre_2 = true;
+                    StartCoroutine(DipVolume(treasureMine_2));
+                }
+                break;
+            case "TreasureMine_3":
+                if (tre_3 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    treasureMine_3.GetComponent<AudioSource>().Play();
+                    tre_3 = true;
+                    StartCoroutine(DipVolume(treasureMine_3));
                 }
                 break;
             default:

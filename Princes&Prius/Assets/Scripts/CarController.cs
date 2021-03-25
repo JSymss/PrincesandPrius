@@ -44,6 +44,10 @@ public class CarController: MonoBehaviour {
     public GameObject treasureMine_1;
     public GameObject treasureMine_2;
     public GameObject treasureMine_3;
+    public GameObject dragonLine_1;
+    public GameObject dragonLine_2;
+    bool draLine_1 = false;
+    bool draLine_2 = false;
     bool beg_1 = false;
     bool beg_2 = false;
     bool enc_1 = false;
@@ -478,6 +482,26 @@ public class CarController: MonoBehaviour {
                     treasureMine_3.GetComponent<AudioSource>().Play();
                     tre_3 = true;
                     StartCoroutine(DipVolume(treasureMine_3));
+                }
+                break;
+            case "DragonLine_1":
+                if (draLine_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    dragonLine_1.GetComponent<AudioSource>().Play();
+                    draLine_1 = true;
+                    StartCoroutine(DipVolume(dragonLine_1));
+                }
+                break;
+            case "DragonLine_2":
+                if (draLine_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    dragonLine_2.GetComponent<AudioSource>().Play();
+                    draLine_2 = true;
+                    StartCoroutine(DipVolume(dragonLine_2));
                 }
                 break;
             case "CannonBall":

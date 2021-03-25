@@ -14,6 +14,7 @@ public class CarController: MonoBehaviour {
     static bool keepFadingIn;
     static bool keepFadingOut;
     public Image companionObj;
+    public Image villainObj;
     public AudioSource backgroundMusic;
     public GameObject beginning_1;
     public GameObject beginning_2;
@@ -53,6 +54,7 @@ public class CarController: MonoBehaviour {
     public GameObject WizardLine_2;
     public GameObject PirateLine_1;
     public GameObject PirateLine_2;
+    public GameObject winGame;
     bool pirate_1 = false;
     bool pirate_2 = false;
     bool wizard_1 = false;
@@ -92,6 +94,7 @@ public class CarController: MonoBehaviour {
     bool tre_2 = false;
     bool tre_3 = false;
     bool can_1 = false;
+    bool roc_1 = false;
 
 
     void Start()
@@ -200,6 +203,7 @@ public class CarController: MonoBehaviour {
         carNoise.volume = 0.6f;
         backgroundMusic.volume = 0.4f;
         companionObj.GetComponent<CompanionSprite>().FadeOut();
+        villainObj.GetComponent<VillainSprite>().FadeOut();
         yield return null;
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -502,7 +506,7 @@ public class CarController: MonoBehaviour {
                 if (draLine_1 == false)
                 {
                     Debug.Log("Entered Trigger");
-                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    villainObj.GetComponent<VillainSprite>().FadeIn();
                     dragonLine_1.GetComponent<AudioSource>().Play();
                     draLine_1 = true;
                     StartCoroutine(DipVolume(dragonLine_1));
@@ -512,7 +516,7 @@ public class CarController: MonoBehaviour {
                 if (draLine_2 == false)
                 {
                     Debug.Log("Entered Trigger");
-                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    villainObj.GetComponent<VillainSprite>().FadeIn();
                     dragonLine_2.GetComponent<AudioSource>().Play();
                     draLine_2 = true;
                     StartCoroutine(DipVolume(dragonLine_2));
@@ -522,7 +526,7 @@ public class CarController: MonoBehaviour {
                 if (gobLine_1 == false)
                 {
                     Debug.Log("Entered Trigger");
-                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    villainObj.GetComponent<VillainSprite>().FadeIn();
                     GoblinLine_1.GetComponent<AudioSource>().Play();
                     gobLine_1 = true;
                     StartCoroutine(DipVolume(GoblinLine_1));
@@ -532,7 +536,7 @@ public class CarController: MonoBehaviour {
                 if (vamp_1 == false)
                 {
                     Debug.Log("Entered Trigger");
-                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    villainObj.GetComponent<VillainSprite>().FadeIn();
                     VampireLine_1.GetComponent<AudioSource>().Play();
                     vamp_1 = true;
                     StartCoroutine(DipVolume(VampireLine_1));
@@ -542,7 +546,7 @@ public class CarController: MonoBehaviour {
                 if (vamp_2 == false)
                 {
                     Debug.Log("Entered Trigger");
-                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    villainObj.GetComponent<VillainSprite>().FadeIn();
                     VampireLine_2.GetComponent<AudioSource>().Play();
                     vamp_2 = true;
                     StartCoroutine(DipVolume(VampireLine_2));
@@ -552,7 +556,7 @@ public class CarController: MonoBehaviour {
                 if (wizard_1 == false)
                 {
                     Debug.Log("Entered Trigger");
-                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    villainObj.GetComponent<VillainSprite>().FadeIn();
                     WizardLine_1.GetComponent<AudioSource>().Play();
                     wizard_1 = true;
                     StartCoroutine(DipVolume(WizardLine_1));
@@ -562,7 +566,7 @@ public class CarController: MonoBehaviour {
                 if (wizard_2 == false)
                 {
                     Debug.Log("Entered Trigger");
-                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    villainObj.GetComponent<VillainSprite>().FadeIn();
                     WizardLine_2.GetComponent<AudioSource>().Play();
                     wizard_2 = true;
                     StartCoroutine(DipVolume(WizardLine_2));
@@ -572,7 +576,7 @@ public class CarController: MonoBehaviour {
                 if (pirate_1 == false)
                 {
                     Debug.Log("Entered Trigger");
-                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    villainObj.GetComponent<VillainSprite>().FadeIn();
                     PirateLine_1.GetComponent<AudioSource>().Play();
                     pirate_1 = true;
                     StartCoroutine(DipVolume(PirateLine_1));
@@ -582,7 +586,7 @@ public class CarController: MonoBehaviour {
                 if (pirate_2 == false)
                 {
                     Debug.Log("Entered Trigger");
-                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    villainObj.GetComponent<VillainSprite>().FadeIn();
                     PirateLine_2.GetComponent<AudioSource>().Play();
                     pirate_2 = true;
                     StartCoroutine(DipVolume(PirateLine_2));
@@ -594,6 +598,16 @@ public class CarController: MonoBehaviour {
                     EventManager.RunCannonBallEvent();
                     can_1 = true;
                 }
+                break;
+            case "RockTrigger":
+                if (roc_1 == false)
+                {
+                    EventManager.ThrowRockEvent();
+                    roc_1  = true;
+                }
+                break;
+            case "WinGame":
+                winGame.GetComponent<WinGame>().TurnOnUI();
                 break;
             default:
                 break;

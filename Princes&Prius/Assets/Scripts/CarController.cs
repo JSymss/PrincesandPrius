@@ -46,6 +46,20 @@ public class CarController: MonoBehaviour {
     public GameObject treasureMine_3;
     public GameObject dragonLine_1;
     public GameObject dragonLine_2;
+    public GameObject GoblinLine_1;
+    public GameObject VampireLine_1;
+    public GameObject VampireLine_2;
+    public GameObject WizardLine_1;
+    public GameObject WizardLine_2;
+    public GameObject PirateLine_1;
+    public GameObject PirateLine_2;
+    bool pirate_1 = false;
+    bool pirate_2 = false;
+    bool wizard_1 = false;
+    bool wizard_2 = false;
+    bool vamp_1 = false;
+    bool vamp_2 = false;
+    bool gobLine_1 = false;
     bool draLine_1 = false;
     bool draLine_2 = false;
     bool beg_1 = false;
@@ -502,6 +516,76 @@ public class CarController: MonoBehaviour {
                     dragonLine_2.GetComponent<AudioSource>().Play();
                     draLine_2 = true;
                     StartCoroutine(DipVolume(dragonLine_2));
+                }
+                break;
+            case "GoblinLine_1":
+                if (gobLine_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    GoblinLine_1.GetComponent<AudioSource>().Play();
+                    gobLine_1 = true;
+                    StartCoroutine(DipVolume(GoblinLine_1));
+                }
+                break;
+            case "VampireLine_1":
+                if (vamp_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    VampireLine_1.GetComponent<AudioSource>().Play();
+                    vamp_1 = true;
+                    StartCoroutine(DipVolume(VampireLine_1));
+                }
+                break;
+            case "VampireLine_2":
+                if (vamp_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    VampireLine_2.GetComponent<AudioSource>().Play();
+                    vamp_2 = true;
+                    StartCoroutine(DipVolume(VampireLine_2));
+                }
+                break;
+            case "WizardLine_1":
+                if (wizard_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    WizardLine_1.GetComponent<AudioSource>().Play();
+                    wizard_1 = true;
+                    StartCoroutine(DipVolume(WizardLine_1));
+                }
+                break;
+            case "WizardLine_2":
+                if (wizard_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    WizardLine_2.GetComponent<AudioSource>().Play();
+                    wizard_2 = true;
+                    StartCoroutine(DipVolume(WizardLine_2));
+                }
+                break;
+            case "PirateLine_1":
+                if (pirate_1 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    PirateLine_1.GetComponent<AudioSource>().Play();
+                    pirate_1 = true;
+                    StartCoroutine(DipVolume(PirateLine_1));
+                }
+                break;
+            case "PirateLine_2":
+                if (pirate_2 == false)
+                {
+                    Debug.Log("Entered Trigger");
+                    companionObj.GetComponent<CompanionSprite>().FadeIn();
+                    PirateLine_2.GetComponent<AudioSource>().Play();
+                    pirate_2 = true;
+                    StartCoroutine(DipVolume(PirateLine_2));
                 }
                 break;
             case "CannonBall":
